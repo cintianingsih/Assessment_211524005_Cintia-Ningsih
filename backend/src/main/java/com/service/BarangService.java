@@ -16,7 +16,7 @@ public class BarangService {
 		return barangRepository.findAll();
 	}
 
-  public Barang getBarangById(String kodebarang) {
+  	public Barang getBarangById(String kodebarang) {
 		return barangRepository.getById(kodebarang);
 	}
 
@@ -28,7 +28,7 @@ public class BarangService {
 		barangRepository.save(barangRequest);
 	}
 
-  public void deleteBarang(String kodebarang) {
+  	public void deleteBarang(String kodebarang) {
 		barangRepository.deleteById(kodebarang);
 	}
 

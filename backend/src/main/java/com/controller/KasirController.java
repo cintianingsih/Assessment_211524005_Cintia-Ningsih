@@ -42,4 +42,9 @@ public class KasirController {
         }
     }
 
+    @GetMapping("/kasir")
+    public ResponseEntity<List<Kasir>> getAllKasir() {
+        List<Kasir> allKasir = kasirService.getAllKasir();
+        return ResponseEntity.ok(allKasir);
+    }
 }
