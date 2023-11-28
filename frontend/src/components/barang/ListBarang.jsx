@@ -17,7 +17,19 @@ export default function ListBarang() {
         setData(result.data);
     };
 
-    
+    async function handleDelete(kodebarang) {
+        const confirmDelete = window.confirm('Apakah Anda yakin ingin menghapus data ini?');
+        if (!confirmDelete) {
+          return;
+        }
+        try {
+          await axios.delete(`http://localhost:8082/barang/delete?kodebarang=${kodebarang}`);
+          setData((prevData) => prevData.filter((barang) => barang.kodebarang !== kodebarang));
+          alert('Data barang berhasil dihapus');
+        } catch (error) {
+          console.error('Error deleting data:', error);
+        }
+      }
 
       return (
         <div className="container">
@@ -61,7 +73,11 @@ export default function ListBarang() {
                                                     <FaEdit />
                                                     </button>
                                                 </Link>
-                                                
+                                                <button
+                                                    className="btn btn-danger ml-2"
+                                                    onClick={() => handleDelete(barang.kodebarang)}>
+                                                    <FaTrash />
+                                                </button>
                                             </div>
                                         </td>
                                     </tr>
