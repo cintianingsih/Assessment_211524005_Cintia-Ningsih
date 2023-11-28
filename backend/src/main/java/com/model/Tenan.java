@@ -5,36 +5,39 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Column;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@Table(name = "tenan")
 public class Tenan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "kode_tenan")
-    private String kodeTenan;
+    @Column
+    private String kodetenan;
 
-    @Column(name = "nama_tenan")
-    private String namaTenan;
+    @Column
+    private String namatenan;
 
     @Column
     private String hp;
 
-    public String getKodeTenan() {
-        return kodeTenan;
+    // Getter and Setter methods for kodebarang
+    public String getKodetenan() {
+        return kodetenan;
     }
 
-    public void setKodeTenan(String kodeTenan) {
-        this.kodeTenan = kodeTenan;
+    public void setKodetenan(String kodetenan) {
+        this.kodetenan = kodetenan;
     }
 
-    public String getNamaTenan() {
-        return namaTenan;
+    public String getNamatenan() {
+        return namatenan;
     }
 
-    public void setNamaTenan(String namaTenan) {
-        this.namaTenan = namaTenan;
+    public void setNamatenan(String namatenan) {
+        this.namatenan= namatenan;
     }
 
     public String getHp() {
@@ -44,4 +47,5 @@ public class Tenan {
     public void setHp(String hp) {
         this.hp = hp;
     }
+    
 }

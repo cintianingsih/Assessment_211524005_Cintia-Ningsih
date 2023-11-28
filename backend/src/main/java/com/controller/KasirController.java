@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.service.KasirService;
-import com.model.Barang;
 import com.model.Kasir;
 
 
