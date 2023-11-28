@@ -23,12 +23,13 @@ public class Kasir {
     @Column
     private String hp;
 
-    public String getKodeKasir() {
+    // Getter and Setter methods for kodebarang
+    public String getKodekasir() {
         return kodekasir;
     }
 
-    public void setKodeKasir(String kodeKasir) {
-        this.kodekasir = kodeKasir;
+    public void setKodekasir(String kodekasir) {
+        this.kodekasir = kodekasir;
     }
 
     public String getNama() {
@@ -46,4 +47,5 @@ public class Kasir {
     public void setHp(String hp) {
         this.hp = hp;
     }
+    
 }

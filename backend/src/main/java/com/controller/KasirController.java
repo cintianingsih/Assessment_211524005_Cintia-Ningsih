@@ -30,4 +30,16 @@ public class KasirController {
         return ResponseEntity.ok("Kasir dengan nama " + namaKasir + " berhasil ditambahkan");
     }
 
+    @PostMapping("/update/kasir")
+    public ResponseEntity<String> updateKasir(@RequestBody Kasir kasirRequest) {
+        String namaKasir = kasirRequest.getNama();
+        
+        if (kasirService.getKasirById(kasirRequest.getKodekasir()) != null) {
+            kasirService.updateKasir(kasirRequest);
+            return ResponseEntity.ok("Kasir dengan nama " + namaKasir + " berhasil diupdate");
+        } else {
+            return ResponseEntity.badRequest().body("Barang dengan ID " + kasirRequest.getKodekasir() + " tidak ditemukan");
+        }
+    }
+
 }

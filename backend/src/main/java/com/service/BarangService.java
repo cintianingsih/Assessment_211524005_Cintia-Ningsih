@@ -24,7 +24,7 @@ public class BarangService {
 		barangRepository.save(barangRequest);
 	}
 
-  public void updateBarang(Barang barangRequest) {
+  	public void updateBarang(Barang barangRequest) {
 		barangRepository.save(barangRequest);
 	}
 
