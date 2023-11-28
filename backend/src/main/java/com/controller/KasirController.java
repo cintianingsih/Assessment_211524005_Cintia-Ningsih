@@ -47,4 +47,17 @@ public class KasirController {
         List<Kasir> allKasir = kasirService.getAllKasir();
         return ResponseEntity.ok(allKasir);
     }
+
+
+    @DeleteMapping("/kasir/delete")
+    public ResponseEntity<String> deleteKasir(@RequestParam String kodekasir) {
+        String namaKasir = kasirService.getKasirById(kodekasir).getNama();
+        
+        if (kasirService.getKasirById(kodekasir) != null) {
+            kasirService.deleteKasir(kodekasir);
+            return ResponseEntity.ok("Barang dengan nama " + namaKasir + " berhasil dihapus");
+        } else {
+            return ResponseEntity.badRequest().body("Barang dengan ID " + kodekasir + " tidak ditemukan");
+        }
+    }
 }

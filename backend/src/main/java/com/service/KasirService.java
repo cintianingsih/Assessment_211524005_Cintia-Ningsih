@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
-import com.model.Barang;
 import com.model.Kasir;
 import com.repository.KasirRepository;
 
@@ -27,6 +26,10 @@ public class KasirService {
     
 	public void updateKasir(Kasir kasirRequest) {
 		kasirRepository.save(kasirRequest);
+	}
+
+	public void deleteKasir(String kodekasir) {
+		kasirRepository.deleteById(kodekasir);
 	}
 
 }
