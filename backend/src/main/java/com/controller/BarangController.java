@@ -52,4 +52,10 @@ public class BarangController {
             return ResponseEntity.badRequest().body("Barang dengan ID " + kodebarang + " tidak ditemukan");
         }
     }
+
+    @GetMapping("/barang")
+    public ResponseEntity<List<Barang>> getAllBarang() {
+        List<Barang> allBarang = barangService.getAllBarang();
+        return ResponseEntity.ok(allBarang);
+    }
 }
