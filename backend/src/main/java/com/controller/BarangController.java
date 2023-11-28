@@ -40,4 +40,16 @@ public class BarangController {
             return ResponseEntity.badRequest().body("Barang dengan ID " + barangRequest.getKodebarang() + " tidak ditemukan");
         }
     }
+
+    @DeleteMapping("/barang/delete")
+    public ResponseEntity<String> deleteBarang(@RequestParam String kodebarang) {
+        String namaBarang = barangService.getBarangById(kodebarang).getNamabarang();
+        
+        if (barangService.getBarangById(kodebarang) != null) {
+            barangService.deleteBarang(kodebarang);
+            return ResponseEntity.ok("Barang dengan nama " + namaBarang + " berhasil dihapus");
+        } else {
+            return ResponseEntity.badRequest().body("Barang dengan ID " + kodebarang + " tidak ditemukan");
+        }
+    }
 }

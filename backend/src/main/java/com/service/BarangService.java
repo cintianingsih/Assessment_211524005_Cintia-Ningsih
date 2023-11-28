@@ -28,4 +28,8 @@ public class BarangService {
 		barangRepository.save(barangRequest);
 	}
 
+  public void deleteBarang(String kodebarang) {
+		barangRepository.deleteById(kodebarang);
+	}
+
 }
