@@ -28,4 +28,16 @@ public class BarangController {
         barangService.addBarang(barangRequest);
         return ResponseEntity.ok("Barang dengan nama " + namaBarang + " berhasil ditambahkan");
     }
+
+    @PostMapping("/update/barang")
+    public ResponseEntity<String> updateBarang(@RequestBody Barang barangRequest) {
+        String namaBarang = barangRequest.getNamabarang();
+        
+        if (barangService.getBarangById(barangRequest.getKodebarang()) != null) {
+            barangService.updateBarang(barangRequest);
+            return ResponseEntity.ok("Barang dengan nama " + namaBarang + " berhasil diupdate");
+        } else {
+            return ResponseEntity.badRequest().body("Barang dengan ID " + barangRequest.getKodebarang() + " tidak ditemukan");
+        }
+    }
 }

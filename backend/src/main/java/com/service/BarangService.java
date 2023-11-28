@@ -16,7 +16,16 @@ public class BarangService {
 		return barangRepository.findAll();
 	}
 
+  public Barang getBarangById(String kodebarang) {
+		return barangRepository.getById(kodebarang);
+	}
+
     public void addBarang(Barang barangRequest) {
 		barangRepository.save(barangRequest);
 	}
+
+  public void updateBarang(Barang barangRequest) {
+		barangRepository.save(barangRequest);
+	}
+
 }
