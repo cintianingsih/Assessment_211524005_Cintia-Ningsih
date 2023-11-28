@@ -30,24 +30,7 @@ function Sidebar() {
             <span>Daftar Barang</span>
           </Link>
         </li>
-        <li className="nav-item">
-          <Link to="/" className="nav-link">
-            <i className="fas fa-fw fa-cog"></i>
-            <span>Daftar Barang</span>
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link to="/" className="nav-link">
-            <i className="fas fa-fw fa-cog"></i>
-            <span>Daftar Barang</span>
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link to="/" className="nav-link">
-            <i className="fas fa-fw fa-cog"></i>
-            <span>Daftar Barang</span>
-          </Link>
-        </li>
+        
     
         <hr className="sidebar-divider d-none d-md-block" />
       </ul>
