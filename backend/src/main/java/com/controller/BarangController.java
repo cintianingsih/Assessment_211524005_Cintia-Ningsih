@@ -7,9 +7,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.service.BarangService;
@@ -58,4 +60,9 @@ public class BarangController {
         List<Barang> allBarang = barangService.getAllBarang();
         return ResponseEntity.ok(allBarang);
     }
+    
+    @GetMapping("/barang/{kodebarang}")
+    public @ResponseBody Barang getBarangById(@PathVariable("kodebarang") String kodebarang){
+		return barangService.getBarangById(kodebarang);
+	}
 }
